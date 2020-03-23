@@ -34,4 +34,13 @@ class Solution:
         return headA
         
         
+#法2：更简洁 但是链表长了会超时
+    def getIntersectionNode(self, headA: ListNode, headB: ListNode) -> ListNode:
+        p=headA
+        q=headB
+        while p!=q:
+            p=p.next if p else headA
+            q=q.next if q else headB
+        return p
+
         
