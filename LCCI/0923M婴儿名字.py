@@ -10,7 +10,7 @@ class Solution:
         p, d, q = {}, {}, collections.defaultdict(int)
         for s in synonyms:
             a, b = s[1: -1].split(',')
-            pa, pb = p.setdefault(a, [a]), p.setdefault(b, [b])
+            pa, pb = p.setdefault(a, [a]), p.setdefault(b, [b])  #setdefault() 方法和get()方法类似,返回指定键的值,如果键不在字典中,将会添加键并将值设置为一个指定值,默认为None
             if pa is not pb:    #并查集基操，对数组引用进行合并
                 pa.extend(pb)
                 for c in pb:
